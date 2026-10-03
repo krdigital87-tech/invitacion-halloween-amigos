@@ -1,0 +1,723 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at center,
+            #23092e 0%,
+            #0b0310 45%,
+            #020104 100%
+        );
+
+    color: white;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   PANTALLA DEL SOBRE
+========================================== */
+
+.pantalla-sobre {
+
+    width: 100%;
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(94, 20, 126, 0.40),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at center,
+            #16051e 0%,
+            #08020c 55%,
+            #020104 100%
+        );
+}
+
+
+/* ==========================================
+   CONTENIDO DEL SOBRE
+========================================== */
+
+.contenido-sobre {
+
+    position: relative;
+    z-index: 5;
+
+    width: 100%;
+    max-width: 700px;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   TEXTO SUPERIOR
+========================================== */
+
+.texto-superior {
+
+    margin-bottom: 35px;
+
+    color: #f4d5b4;
+
+    font-size: clamp(
+        1rem,
+        4vw,
+        1.35rem
+    );
+
+    letter-spacing: 5px;
+
+    text-shadow:
+        0 0 15px rgba(255, 122, 33, 0.35);
+}
+
+
+/* ==========================================
+   BOTÓN DEL SOBRE
+========================================== */
+
+.boton-sobre {
+
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(82vw, 450px);
+
+    padding: 0;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    animation:
+        flotarSobre
+        3.2s
+        ease-in-out
+        infinite;
+}
+
+
+/* ==========================================
+   IMAGEN DEL SOBRE
+========================================== */
+
+.imagen-sobre {
+
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    filter:
+        drop-shadow(
+            0 0 20px
+            rgba(255, 107, 20, 0.55)
+        )
+        drop-shadow(
+            0 0 35px
+            rgba(142, 45, 226, 0.45)
+        );
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+.boton-sobre:active .imagen-sobre {
+
+    transform: scale(0.96);
+}
+
+
+/* ==========================================
+   RESPLANDOR
+========================================== */
+
+.resplandor {
+
+    position: absolute;
+
+    width: 75%;
+    height: 65%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 111, 25, 0.30),
+            rgba(130, 40, 200, 0.20),
+            transparent 70%
+        );
+
+    filter: blur(20px);
+
+    animation:
+        respirar
+        2.6s
+        ease-in-out
+        infinite;
+
+    z-index: 1;
+}
+
+
+/* ==========================================
+   INDICACIÓN
+========================================== */
+
+.indicacion {
+
+    margin-top: 40px;
+
+    color: #c9b9cf;
+
+    font-size: clamp(
+        0.72rem,
+        3vw,
+        0.95rem
+    );
+
+    letter-spacing: 3px;
+}
+
+
+.flecha {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #ff7621;
+
+    font-size: 2rem;
+
+    animation:
+        flechaMovimiento
+        1.5s
+        ease-in-out
+        infinite;
+}
+
+
+/* ==========================================
+   NIEBLA
+========================================== */
+
+.niebla {
+
+    position: absolute;
+
+    width: 120%;
+    height: 250px;
+
+    left: -10%;
+
+    border-radius: 50%;
+
+    background:
+        rgba(118, 52, 142, 0.08);
+
+    filter: blur(55px);
+
+    pointer-events: none;
+}
+
+
+.niebla-1 {
+
+    bottom: 5%;
+
+    animation:
+        moverNiebla
+        9s
+        ease-in-out
+        infinite alternate;
+}
+
+
+.niebla-2 {
+
+    top: 10%;
+
+    opacity: 0.5;
+
+    animation:
+        moverNiebla
+        12s
+        ease-in-out
+        infinite alternate-reverse;
+}
+
+
+/* ==========================================
+   PANTALLA INVITACIÓN
+========================================== */
+
+.pantalla-invitacion {
+
+    position: relative;
+
+    display: none;
+
+    width: 100%;
+    min-height: 100svh;
+
+    padding:
+        35px
+        15px
+        55px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #24102e 0%,
+            #09030d 50%,
+            #020104 100%
+        );
+}
+
+
+/* ==========================================
+   FONDO DECORATIVO
+========================================== */
+
+.fondo-invitacion {
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 111, 20, 0.09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(145, 47, 210, 0.12),
+            transparent 35%
+        );
+}
+
+
+/* ==========================================
+   CONTENEDOR
+========================================== */
+
+.contenedor-invitacion {
+
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 680px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+
+/* ==========================================
+   MENSAJE SUPERIOR
+========================================== */
+
+.mensaje-arriba {
+
+    margin-bottom: 22px;
+
+    color: #ff812e;
+
+    font-size: clamp(
+        0.72rem,
+        3vw,
+        0.95rem
+    );
+
+    letter-spacing: 4px;
+
+    opacity: 0;
+
+    animation:
+        aparecerTexto
+        1s
+        ease
+        0.5s
+        forwards;
+}
+
+
+/* ==========================================
+   MARCO DE LA INVITACIÓN
+========================================== */
+
+.marco-invitacion {
+
+    width: 100%;
+
+    padding: 5px;
+
+    border:
+        1px solid
+        rgba(255, 128, 40, 0.70);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 122, 33, 0.15),
+            rgba(109, 28, 151, 0.20)
+        );
+
+    box-shadow:
+        0 0 20px
+        rgba(255, 107, 20, 0.20),
+
+        0 0 45px
+        rgba(120, 32, 174, 0.28);
+
+    opacity: 0;
+
+    transform:
+        translateY(70px)
+        scale(0.88);
+
+    animation:
+        salirDelSobre
+        1.15s
+        cubic-bezier(
+            0.17,
+            0.84,
+            0.44,
+            1
+        )
+        forwards;
+}
+
+
+/* ==========================================
+   IMAGEN DE INVITACIÓN
+========================================== */
+
+.imagen-invitacion {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* ==========================================
+   MENSAJE FINAL
+========================================== */
+
+.mensaje-final {
+
+    margin:
+        30px
+        0
+        20px;
+
+    color: #e9dce9;
+
+    font-size: clamp(
+        0.8rem,
+        3.3vw,
+        1rem
+    );
+
+    letter-spacing: 2px;
+
+    opacity: 0;
+
+    animation:
+        aparecerTexto
+        1s
+        ease
+        1s
+        forwards;
+}
+
+
+/* ==========================================
+   BOTÓN MAPA
+========================================== */
+
+.btn-mapa {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 220px;
+
+    padding:
+        16px
+        30px;
+
+    border:
+        1px solid
+        rgba(255, 139, 55, 0.85);
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b0b73,
+            #a51ac2
+        );
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    font-size: 0.85rem;
+
+    font-weight: 500;
+
+    letter-spacing: 3px;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 0 20px
+        rgba(147, 41, 190, 0.35);
+
+    opacity: 0;
+
+    animation:
+        aparecerTexto
+        1s
+        ease
+        1.25s
+        forwards;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.btn-mapa:active {
+
+    transform: scale(0.97);
+}
+
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes flotarSobre {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            scale(1.02);
+    }
+}
+
+
+@keyframes respirar {
+
+    0%,
+    100% {
+        transform: scale(0.92);
+        opacity: 0.55;
+    }
+
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
+    }
+}
+
+
+@keyframes flechaMovimiento {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+@keyframes moverNiebla {
+
+    from {
+        transform: translateX(-4%);
+    }
+
+    to {
+        transform: translateX(4%);
+    }
+}
+
+
+@keyframes salirDelSobre {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateY(90px)
+            scale(0.82);
+    }
+
+    65% {
+        opacity: 1;
+
+        transform:
+            translateY(-8px)
+            scale(1.015);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+@keyframes aparecerTexto {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+@media (max-width: 480px) {
+
+    .contenido-sobre {
+        padding:
+            30px
+            18px;
+    }
+
+    .texto-superior {
+        margin-bottom: 28px;
+        letter-spacing: 3px;
+    }
+
+    .boton-sobre {
+        width: min(88vw, 390px);
+    }
+
+    .indicacion {
+        margin-top: 30px;
+        letter-spacing: 2px;
+    }
+
+    .pantalla-invitacion {
+        padding:
+            24px
+            10px
+            45px;
+    }
+
+    .marco-invitacion {
+        padding: 3px;
+    }
+
+    .mensaje-arriba {
+        letter-spacing: 2.5px;
+    }
+
+    .btn-mapa {
+        width: 90%;
+        max-width: 330px;
+    }
+}
+
+
+/* ==========================================
+   ACCESIBILIDAD
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

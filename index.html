@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Invitación Noche de Halloween</title>
+
+    <meta
+        name="description"
+        content="Tienes una invitación especial para nuestra Noche de Halloween."
+    >
+
+    <link rel="stylesheet" href="style.css?v=1">
+</head>
+
+<body>
+
+    <!-- ==========================================
+         PANTALLA DEL SOBRE
+    =========================================== -->
+
+    <section
+        id="pantallaSobre"
+        class="pantalla pantalla-sobre"
+    >
+
+        <div class="contenido-sobre">
+
+            <p class="texto-superior">
+                TIENES UNA INVITACIÓN
+            </p>
+
+            <button
+                id="btnSobre"
+                class="boton-sobre"
+                type="button"
+                aria-label="Abrir invitación"
+            >
+
+                <div class="resplandor"></div>
+
+                <img
+                    src="img/sobre_halloween.png"
+                    alt="Sobre de invitación de Halloween"
+                    class="imagen-sobre"
+                >
+
+            </button>
+
+            <p class="indicacion">
+                TOCA EL SOBRE PARA DESCUBRIRLA
+            </p>
+
+            <span class="flecha">⌄</span>
+
+        </div>
+
+        <!-- Decoración -->
+
+        <div class="niebla niebla-1"></div>
+        <div class="niebla niebla-2"></div>
+
+    </section>
+
+
+    <!-- ==========================================
+         INVITACIÓN
+    =========================================== -->
+
+    <main
+        id="pantallaInvitacion"
+        class="pantalla-invitacion"
+    >
+
+        <div class="fondo-invitacion"></div>
+
+        <div class="contenedor-invitacion">
+
+            <p class="mensaje-arriba">
+                UNA NOCHE ESPECIAL TE ESPERA
+            </p>
+
+            <div class="marco-invitacion">
+
+                <img
+                    src="img/invitacion-amigos.png"
+                    alt="Invitación a la Noche de Halloween"
+                    class="imagen-invitacion"
+                >
+
+            </div>
+
+            <p class="mensaje-final">
+                🎃 NOS DARÁ MUCHO GUSTO VERTE 🎃
+            </p>
+
+            <a
+                class="btn-mapa"
+                href="https://www.google.com/maps/search/?api=1&query=Casino+Villa+Galicia+Av+Simon+Bolivar+901+Monterrey+Nuevo+Leon"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📍 CÓMO LLEGAR
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         AUDIO
+    =========================================== -->
+
+    <audio
+        id="efectoRisas"
+        preload="auto"
+    >
+        <source
+            src="audio/efecto_risas.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <script src="script.js?v=1"></script>
+
+</body>
+
+</html>
